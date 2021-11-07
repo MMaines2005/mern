@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 
-const HookForm = (props) => {
+const HookForm = () => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
