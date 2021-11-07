@@ -14,7 +14,7 @@ const Form = () => {
 
     const handlefirstNameChange = (e) => {
         setFirstName(e.target.value);
-        if (e.target.value.length < 3) {
+        if (e.target.value.length < 3 && e.target.value.length > 0) {
             setFirstNameError('First name must be at least 3 characters');
         } else {
             setFirstNameError('');
@@ -23,7 +23,7 @@ const Form = () => {
 
     const handlelastNameChange = (e) => {
         setLastName(e.target.value);
-        if (e.target.value.length < 3) {
+        if (e.target.value.length < 3 && e.target.value.length > 0) {
             setLastNameError('Last name must be at least 3 characters');
         } else {
             setLastNameError('');
@@ -32,7 +32,7 @@ const Form = () => {
 
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
-        if (!e.target.value.includes('@') && !e.target.value.length < 3) {
+        if (!e.target.value.includes('@') && !e.target.value.length < 5 && e.target.value.length > 0) {
             setEmailError('Email must contain @');
         } else {
             setEmailError('');
@@ -41,7 +41,7 @@ const Form = () => {
 
     const handlePasswordChange = (e) => {
         setPassword(e.target.value);
-        if (e.target.value.length < 8) {
+        if (e.target.value.length < 8 && e.target.value.length > 0) {
             setPasswordError('Password must be at least 6 characters');
         } else {
             setPasswordError('');
