@@ -11,6 +11,7 @@ const HookForm = (props) => {
 
     return (
         <div>
+            <form>
             <div>
             <label htmlFor="firstName">First Name</label>
             <input type="text" name="firstName" 
@@ -32,6 +33,26 @@ const HookForm = (props) => {
                 <label htmlFor="confirmPassword">Confirm Password</label>
                 <input type="password" name="confirmPassword" onChange={(e) => setConfirmPassword(e.target.value)}/>
             </div>
+            </form>
+
+            <div>
+        <h3 style={{ textAlign: 'center' }}>Your Form Data</h3>
+        <p>
+          <label>First Name: </label>{ firstName }
+        </p>
+        <p>
+          <label>Last Name: </label>{ lastName }
+        </p>
+        <p>
+          <label>Email: </label>{ email }
+        </p>
+        <p>
+          <label>Password: </label>{ password }
+        </p>
+        <p>
+          <label>Confirm Password: </label>{ confirmPassword }
+        </p>
+      </div>
         </div>
         
     );
