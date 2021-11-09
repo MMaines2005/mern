@@ -1,16 +1,42 @@
-import React, {userReducer, useState} from 'react';
+import React, {useReducer, useState} from 'react';
 
 const Formval = () => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
     
-
+// don't understand platform... on email regex
 const initialState = {
     firstName:{ value: '', error: null },
     lastName:{ value: '', error: null },
     email:{ value: '', error: null },
 };
+const reducer = (state, action) => {
+    switch (action.type) {
+        case 'firstName':
+            return {
+                ...state,
+                firstName: {
+                    value: action.value,
+                    error: action.error,
+                },
+            };
+        case 'lastName':
+            return {
+                ...state,
+                lastName: {
+                    value: action.value,
+                    error: action.error,
+                },
+            };
+        case 'email':
+            return {
+                ...state,
+                email: {
+                    value: action.value,
+                    error: action.error,
+                },
+            };
 return (    
     <>
     <div>
@@ -55,5 +81,7 @@ return (
     </>
 );
 
+    }
 }
+
 export default Formval;
