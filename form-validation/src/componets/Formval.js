@@ -37,6 +37,8 @@ const reducer = (state, action) => {
                     error: action.error,
                 },
             };
+        };
+    };
 return (    
     <>
     <div>
@@ -65,11 +67,12 @@ return (
             </div>
             </form>
 
-            <div>
+        <div>
         <h3 style={{ textAlign: 'center' }}>Your Form Data</h3>
         <p>
           <label>First Name: </label>{ firstName }
         </p>
+        <p> {initialState.firstName.error}</p>
         <p>
           <label>Last Name: </label>{ lastName }
         </p>
@@ -81,7 +84,8 @@ return (
     </>
 );
 
-    }
-}
+    
+};
+
 
 export default Formval;
