@@ -72,7 +72,7 @@ return (
         <p>
           <label>First Name: </label>{ firstName }
         </p>
-        <p> {initialState.firstName.error}</p>
+        
         <p>
           <label>Last Name: </label>{ lastName }
         </p>
