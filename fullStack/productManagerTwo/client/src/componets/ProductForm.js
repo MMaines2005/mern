@@ -1,7 +1,8 @@
 import React, { useState} from 'react';
 import axios from 'axios';
 
-const ProductForm = () => {
+const ProductForm = (props) => {
+    const {beenSubmitted, setBeenSubmitted} = props;
     const [title, setTitle] = useState('');
     const [price, setPrice] = useState('');
     const [description, setDescription] = useState('');
@@ -16,8 +17,16 @@ const ProductForm = () => {
             price,
             description
         }
-        axios.post('http://localhost:8000/api/products', newProduct) 
-        .then(res => console.log(res))
+        axios.post('http://localhost:8000/api', newProduct) 
+        .then(res => {
+            console.log(res)
+            // Clear the form
+            setTitle('');
+            setPrice('');
+            setDescription('');
+            //rerendering the ProductList component
+            setBeenSubmitted(!beenSubmitted);
+        })
         .catch(err => console.log(err));
         
     }
@@ -25,6 +34,7 @@ const ProductForm = () => {
     return (
         <form onSubmit={onSubmit}>
             <div>
+                <h2>Product Manager</h2>
             <p>
                 <label>Title</label><br/>
                 <input type="text" onChange = {(e)=>setTitle(e.target.value)}/> 
