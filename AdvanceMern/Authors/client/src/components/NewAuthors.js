@@ -9,13 +9,10 @@ const NewAuthor = (props) => {
   // This is triggered when form is submitted
   const newSubmitHandler = (e) => {
     e.preventDefault();
-    // make axios post request with author data in object as second arg
-    // This second arg contains the data that is sent to server.
-    // The keys in this object need to match up with the field names specified in models.py in back
-    axios
-      .post(`http://localhost:8000/api/authors`, {
-        authorName,
-      })
+    
+    axios.post(`http://localhost:8000/api/authors`, 
+        {authorName}
+    )
       .then((res) => {
         console.log(res.data);
         navigate("/");
